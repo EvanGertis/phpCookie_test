@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -22,3 +23,11 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
+
+<div class="topnav" id="myTopnav">
+  <a href="./index.php" class="active">Form</a>
+  <a href="./action_page.php">Data</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>

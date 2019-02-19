@@ -4,6 +4,7 @@
 
 // define variables and set to empty values
 $firstname = $lastname = $country = "";
+$cookie_name = "user";
 
 // just need to check the method before we store variables.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(!empty($_POST["firstname"]))
         $country = test_input($_POST["country"]);
     if(!empty($firstname) && !empty($lastname)){
-        $cookie_name = "user";
         $cookie_value = $firstname." ".$lastname;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     }
