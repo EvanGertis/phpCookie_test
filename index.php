@@ -1,5 +1,6 @@
 <?php include("header.php") ?>
 
+<!-- post form for getting, user's full name and country -->
 <form method= "post" action="action_page.php">
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">

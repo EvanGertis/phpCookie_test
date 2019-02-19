@@ -5,7 +5,12 @@
 // define variables and set to empty values
 $firstname = $lastname = $country = "";
 
+// just need to check the method before we store variables.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // these conditionals just prevent errors from popping up.
+    // we don't want to use the post variables until there is something 
+    // in them
     if(!empty($_POST["firstname"]))
         $firstname = test_input($_POST["firstname"]);
     if(!empty($_POST["firstname"]))
