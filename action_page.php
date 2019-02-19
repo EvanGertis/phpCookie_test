@@ -18,10 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $lastname = test_input($_POST["lastname"]);
     if(!empty($_POST["firstname"]))
         $country = test_input($_POST["country"]);
-    if(!empty($firstname) && !empty($lastname)){
+    if((!empty($firstname) && !empty($lastname)) && empty($_POST["delete"])){
         $cookie_value = $firstname." ".$lastname;
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     }
+    if(!empty($_POST["delete"]))
+       unset($_COOKIE[$cookie_name]);
     
 }
 ?>
@@ -41,6 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <ul>
     <li><?php echo "Hi ".$firstname." ".$lastname." from ".$country?></li>
 </ul>
+
+<form method="post" action="action_page.php">
+    Delete the cookie: <input type="radio" name= "delete">
+    <input type="submit">
+</form>
 
 <?php
 // cleans the inputs.
